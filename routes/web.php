@@ -37,3 +37,7 @@ Route::prefix('admin')->group(function () {
 // });
 
 Route::get('/listbarang/{id}/{nama}', [ListBarangController::class, 'tampilkan']);
+
+Route::get('/gambar', function () {
+    return view('gambar');
+});
