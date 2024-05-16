@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ListBarangController;
 use App\Http\Controllers\ListProductController;
+use App\Http\Controllers\ListProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,5 @@ Route::get('/gambar', function () {
 });
 
 Route::get('/listproduct', [ListProductController::class, 'tampilkan']);
+
+Route::get('/listproduk', [ListProdukController::class, 'show']);
