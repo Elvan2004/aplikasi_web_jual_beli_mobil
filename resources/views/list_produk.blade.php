@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,4 +31,25 @@
         </table>
     </div>
 </body>
-</html>
+</html> --}}
+
+<div><h1>Input Produk</h1></div>
+<form method="POST" action="{{ route('produk.simpan') }}">
+    <table class="table">
+        <tr>
+            <td>Nama:</td>
+            <td colspan="3"><input type="text" name="nama" id="nama" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Deskripsi:</td>
+            <td colspan="3"><textarea name="deskripsi" id="deskripsi" class="form-control"></textarea></td>
+        </tr>
+        <tr>
+            <td>Harga:</td>
+            <td><input type="number" name="harga" id="harga" class="form-control"></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">Simpan</button>
+</form>
