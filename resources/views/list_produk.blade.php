@@ -33,7 +33,7 @@
 </body>
 </html> --}}
 
-<div><h1>Input Produk</h1></div>
+{{-- <div><h1>Input Produk</h1></div>
 <form method="POST" action="{{ route('produk.simpan') }}">
     <table class="table">
         <tr>
@@ -52,4 +52,33 @@
         </tr>
     </table>
     <button type="submit" class="btn btn-primary">Simpan</button>
-</form>
+</form> --}}
+
+<table>
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Nama Produk</th>
+            <th>Deskripsi Produk</th>
+            <th>Harga Produk</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($nama as $index => $item)
+        <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ $item }}</td>
+            <td>{{ $desc[$index] }}</td>
+            <td>{{ $harga[$index] }}</td>
+            <td>
+                <form action="{{ route('produk.delete', $id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" onclick="return confirm('Are you sure you want to delete {{ $item }}?')">Delete</button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
